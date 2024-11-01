@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100%;
+    background: linear-gradient(90deg,skyblue,pink,lavender);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
+
+#main-container{
+    width: 60vw;
+    max-width: 800px;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+    border-radius: 50px;
+    box-shadow:0 0 20px black;
+    background-color: lavenderblush;
+    margin: 20vh auto;
+}
+
+#reaction{
+    display: flex;
+    gap:2rem;
+    text-align: center;
+    padding:2rem;
+    margin:20px;
+    width: fit-content;
+    div{
+        transition:transform 1s ease;
+    }
+   
+}
+
+#reaction div:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* .child:hover{
+    border:2px solid black;
+    cursor: pointer;
+    border-radius: 20px;
+} */
+
+#submit{
+    button{
+        background-color: brown;
+        color:white;
+        padding:10px 15px;
+        font-size: 1.2rem;
+        border:none;
+        border-radius: 20px;
+    }
+}
+
+
+.active{
+    transform: scale(1.2);
+    background: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.3),rgba(0,0,0,0.2));
+    border-radius: 20px;
+    border:2px solid rgb(20, 19, 19);
+
+}
+
+
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:30vw;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    /* outline:1px solid rebeccapurple; */
+    .emo{
+        padding:2vh 1.2vw;
+        /* outline:1px solid black; */
+        font-size: 3rem;
+        text-align: center;
+        width: 20vw;
+    }
+    h3{
+        font-size:30px;
+        padding:20px 0;
+    }
+    h3 span{
+        color:red;
+        font-size:30px;
+    }
+
+    p{
+        font-size: 20px;
+        font-weight: 700;
+        padding:20px;
+        color:orangered;
+        text-align: center;
+
+    }
+    button{
+        padding:5px 30px;
+        font-size: 20px;
+        margin:10px;
+        background-color: skyblue;
+        color:white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        transform: scale(1.2);
+    }
+}
+
+
+.result.show {
+    transform: translateY(0);
+}
+
+
+
+/*+++++++media query ++++++++*/
+@media(max-width:1126px){
+    .result.show{
+        width:60vw;
+    }
+}
+@media (max-width: 990px) {
+    #main-container {
+        width: 70vw; /* Adjust width */
+    }
+
+    #reaction {
+        gap: 1rem; 
+    }
+
+    .child {
+        flex: 1 1 20%; /* Each child takes 20% width on smaller screens */
+    }
+
+    button {
+        padding: 8px 12px; 
+        font-size: 1rem; 
+    }
+    .result {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 810px) {
+    #reaction {
+        flex-wrap: wrap; 
+    }
+
+    .child {
+        flex: 1 1 25%; /* Each child takes 25% width */
+    }
+
+    .result {
+        width: 70vw; 
+        
+    }
+}
+
+
+@media (max-width: 632px) {
+    #reaction {
+        flex-direction: row; /* Keep emojis in a row */
+        justify-content: space-between; /* Ensure even spacing */
+    }
+
+    .child {
+        flex: 1 1 40%; /* Each child takes 40% width */
+        margin: 10px 0; 
+    }
+
+    button {
+        width: 100%; /* Full width for buttons */
+    }
+
+    .result {
+        width: 90vw; 
+        
+    }
+}
+
+@media (max-width: 626px){
+    .result.show{
+        width: 500px;
+        padding:20px 40px;
+    }
+
+}
+
+@media (max-width: 536px) {
+    #main-container {
+        width: 90vw; 
+        
+    }
+
+    #heading h1 {
+        font-size: 1.5rem; 
+    }
+
+    #reaction {
+        padding: 1rem; /* Reduce padding */
+    }
+
+    .child {
+        flex: 1 1 45%; /* Each child takes 45% width */
+        font-size: 0.9rem; 
+    }
+
+    button {
+        padding: 6px 10px; /* Smaller button size */
+        font-size: 0.9rem; /* Reduce font size for buttons */
+    }
+
+    .result {
+        width: 75vw; 
+       
+    }
+
+    .result h3 {
+        font-size: 1.2rem; 
+    }
+
+    .result p {
+        font-size: 0.9rem; 
+    }
+
+    .result button {
+        padding: 8px 12px; 
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 375px){
+
+    .result p{
+        width:80vw;
+    }
+}
