@@ -19,9 +19,6 @@ reaction.addEventListener('click',(e) =>{
         icon.classList.add('active');
     }
 
-    if(icon.classList.contains('active')){
-
-    }
 
 });
 
